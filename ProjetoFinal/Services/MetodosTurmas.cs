@@ -6,34 +6,64 @@ class MetodosTurmas
 {
     public static void CadastrarTurma()
     {
-        Console.Write("Digite o código da turma: ");
-        string codigo = Console.ReadLine() ?? ""; // Evita valor nulo
-        Console.Write("Digite a etapa de ensino: ");
-        string etapaEnsino = Console.ReadLine() ?? ""; // Evita valor nulo
-        Console.Write("Digite o ano da turma: ");
+        string codigo, etapaEnsino, endereco;
+        int ano, limiteVagas;
 
-        if (!int.TryParse(Console.ReadLine(), out int ano))
+        while (true)
         {
-            Console.WriteLine("Ano inválido.");
-            return;
-        }
+            while (true)
+            {
+                Console.Write("Digite o código da turma: ");
+                codigo = Console.ReadLine() ?? ""; // Evita valor nulo
+                if (!ListaDeTurmas.ExisteCodigo(codigo) && codigo != "")
+                {
+                    break;
+                }
+                else if (ListaDeTurmas.ExisteCodigo(codigo))
+                {
+                    Console.WriteLine("Erro: Código da turma já cadastrado!");
+                }
+                Console.WriteLine("O valor de código não pode ser vazio, digite novamente.");
+            }
 
-        Console.Write("Digite o limite de vagas: ");
-        if (!int.TryParse(Console.ReadLine(), out int limiteVagas))
-        {
-            Console.WriteLine("Limite de vagas inválido.");
-            return;
-        }
+            Console.Write("Digite o endereço do aluno: ");
+            endereco = Console.ReadLine() ?? ""; // Evita valor nulo
 
-        if (ListaDeTurmas.ExisteCodigo(codigo))
-        {
-            Console.WriteLine("Erro: Código da turma já cadastrado!");
-            return;
+            Console.Write("Digite a etapa de ensino: ");
+            etapaEnsino = Console.ReadLine() ?? ""; // Evita valor nulo
+
+            while (true)
+            {
+                Console.Write("Digite o ano da turma: ");
+                if (int.TryParse(Console.ReadLine(), out ano) && ano != 0)
+                {
+                    break;
+                }
+                
+                Console.WriteLine("Ano inválido. Digite novamente.");
+            }
+
+            while (true)
+            {
+                Console.Write("Digite o limite de vagas: ");
+                if (int.TryParse(Console.ReadLine(), out limiteVagas) && limiteVagas != 0)
+                {
+                    break;
+                }
+                Console.WriteLine("Limite de vagas inválido.");
+            }
+            if (etapaEnsino != "" && endereco != "")
+            {
+                break;
+            }
+            Console.WriteLine("--------------------------------------------------------------------------------------");
+            Console.WriteLine("O valor de nenhum dado pode ser vazio. Por favor verifique os dados e digite novamente.\n");
         }
 
         ListaDeTurmas.Add(new Turma(codigo, etapaEnsino, ano, limiteVagas));
         Console.WriteLine("Turma cadastrada com sucesso.");
     }
+ 
     public static void MatricularAluno()
     {
         Console.Write("Digite o nome do aluno: ");
