@@ -41,3 +41,18 @@ C:\Users\xdbil\Source\Repos\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.
 C:\Users\xdbil\Source\Repos\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.pdb
 C:\Users\xdbil\Source\Repos\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.genruntimeconfig.cache
 C:\Users\xdbil\Source\Repos\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ref\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.exe
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.deps.json
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.runtimeconfig.json
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.pdb
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.AssemblyInfoInputs.cache
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.AssemblyInfo.cs
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.csproj.CoreCompileInputs.cache
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.sourcelink.json
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\refint\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.pdb
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.genruntimeconfig.cache
+D:\Trabalhos Facul\ProjetoFinal\projeto-cadastro-alunos\ProjetoFinal\obj\Debug\net8.0\ref\ProjetoFinal.dll
