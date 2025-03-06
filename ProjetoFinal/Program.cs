@@ -59,14 +59,29 @@
             DateTime dataNascimento;
             while (true)
             {
+
                 Console.Write("Digite o nome do aluno: ");
                 nome = Console.ReadLine() ?? "";
-                Console.Write("Digite o CPF do aluno: ");
-                cpf = Console.ReadLine() ?? ""; // Evita valor nulo
+                //if (!ListaDeAlunos.ExisteNome(nome))
+                //{
+                //    break;
+                //}
+                //Console.WriteLine("Erro: Nome já cadastrado!");  
+                // Não exclui o método, porém pessoas podem ter o mesmo nome, então nao acho que faça sentido
+
+                while (true)
+                {
+                    Console.Write("Digite o CPF do aluno: ");
+                    cpf = Console.ReadLine() ?? ""; // Evita valor nulo
+                    if (!ListaDeAlunos.ExisteCPF(cpf))
+                    {
+                        break;
+                    }
+                    Console.WriteLine("Erro: CPF já cadastrado! Digite novamente: ");
+                }
                 Console.Write("Digite o endereço do aluno: ");
                 endereco = Console.ReadLine() ?? ""; // Evita valor nulo
                 Console.Write("Digite a data de nascimento (dd/mm/aaaa): ");
-
                 while (true)
                 {
                     if (DateTime.TryParse(Console.ReadLine(), out dataNascimento))
@@ -74,26 +89,13 @@
                         break;
                     }
                     Console.WriteLine("Data inválida, digite novamente.");
-                    Console.ReadKey();
                 }
 
                 if (nome != "" && cpf != "" && endereco != "")
                 {
                     break;
                 }
-                Console.WriteLine("O valor de nenhum dado pode ser vazio. Por favor digite novamente.");
-            }
-
-            if (ListaDeAlunos.ExisteCPF(cpf))
-            {
-                Console.WriteLine("Erro: CPF já cadastrado!");
-                return;
-            }
-
-            if (ListaDeAlunos.ExisteNome(nome))
-            {
-                Console.WriteLine("Erro: Nome já cadastrado!");
-                return;
+                Console.WriteLine("O valor de nenhum dado pode ser vazio. Por favor revise os dados e digite novamente.");
             }
 
             Aluno aluno = new Aluno(nome, cpf, endereco, dataNascimento);
