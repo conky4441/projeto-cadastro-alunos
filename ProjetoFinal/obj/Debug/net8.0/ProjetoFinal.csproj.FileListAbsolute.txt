@@ -1,0 +1,28 @@
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.AssemblyInfoInputs.cache
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.AssemblyInfo.cs
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.csproj.CoreCompileInputs.cache
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.exe
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.deps.json
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.runtimeconfig.json
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.dll
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.pdb
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.dll
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\refint\ProjetoFinal.dll
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.pdb
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.genruntimeconfig.cache
+C:\Users\mauricio.santos\Desktop\.net\ProjetoFinal\ProjetoFinal\obj\Debug\net8.0\ref\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.exe
+D:\Trabalhos Facul\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.deps.json
+D:\Trabalhos Facul\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.runtimeconfig.json
+D:\Trabalhos Facul\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\bin\Debug\net8.0\ProjetoFinal.pdb
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.AssemblyInfoInputs.cache
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.AssemblyInfo.cs
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.csproj.CoreCompileInputs.cache
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\refint\ProjetoFinal.dll
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.pdb
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ProjetoFinal.genruntimeconfig.cache
+D:\Trabalhos Facul\ProjetoFinal\obj\Debug\net8.0\ref\ProjetoFinal.dll
