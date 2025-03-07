@@ -1,5 +1,5 @@
-﻿using Models;
-using ProjetoFinal.Services.Listas;
+﻿using ProjetoFinal.Entities;
+using ProjetoFinal.Entities.Models;
 namespace ProjetoFinal.Services;
 
 class MetodosTurmas
@@ -15,11 +15,11 @@ class MetodosTurmas
             {
                 Console.Write("Digite o código da turma: ");
                 codigo = Console.ReadLine() ?? ""; // Evita valor nulo
-                if (!ListaDeTurmas.ExisteCodigo(codigo) && codigo != "")
+                if (!Escola.ExisteCodigoTurma(codigo) && codigo != "")
                 {
                     break;
                 }
-                else if (ListaDeTurmas.ExisteCodigo(codigo))
+                else if (Escola.ExisteCodigoTurma(codigo))
                 {
                     Console.WriteLine("Erro: Código da turma já cadastrado!");
                 }
@@ -60,10 +60,9 @@ class MetodosTurmas
             Console.WriteLine("O valor de nenhum dado pode ser vazio. Por favor verifique os dados e digite novamente.\n");
         }
 
-        ListaDeTurmas.Add(new Turma(codigo, etapaEnsino, ano, limiteVagas));
+        Escola.AddTurma(new Turma(codigo, etapaEnsino, ano, limiteVagas));
         Console.WriteLine("Turma cadastrada com sucesso.");
     }
- 
     public static void MatricularAluno()
     {
         Console.Write("Digite o nome do aluno: ");
@@ -72,13 +71,13 @@ class MetodosTurmas
         Console.Write("Digite o código da turma: ");
         string codigo = Console.ReadLine() ?? "";
 
-        if (!ListaDeAlunos.ExisteNome(nome))
+        if (!Escola.ExisteNome(nome))
         {
             Console.WriteLine("Erro: Aluno não encontrado.");
             return;
         }
 
-        if (!ListaDeTurmas.ExisteCodigo(codigo))
+        if (!Escola.ExisteCodigoTurma(codigo))
         {
             Console.WriteLine("Erro: Turma não encontrada.");
             return;
@@ -89,6 +88,7 @@ class MetodosTurmas
     public static void ExibirTurmas()
     {
         Console.WriteLine("\nLista de Turmas:");
-        ListaDeTurmas.Exibir();
+        Escola.ExibirTurmas();
+        Console.ReadKey();
     }
 }

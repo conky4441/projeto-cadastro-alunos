@@ -1,37 +1,55 @@
-﻿using ProjetoFinal.Models;
-using ProjetoFinal.Services.Listas;
+﻿using ProjetoFinal.Entities;
+using ProjetoFinal.Entities.Models;
 
 namespace Services;
 public static class MetodosAlunos
 {
     public static void CadastrarAluno()
     {
-        string nome, cpf, endereco;
+        string nome, endereco;
+        int cpf;
         DateTime dataNascimento;
         while (true)
         {
-
-            Console.Write("Digite o nome do aluno: ");
-            nome = Console.ReadLine() ?? "";
-            //if (!ListaDeAlunos.ExisteNome(nome))
-            //{
-            //    break;
-            //}
-            //Console.WriteLine("Erro: Nome já cadastrado!");  
-            // Não exclui o método, porém pessoas podem ter o mesmo nome, então nao acho que faça sentido
+            while (true)
+            {
+                Console.Write("Digite o nome do aluno: ");
+                nome = Console.ReadLine() ?? "";
+                if (nome != "")
+                {
+                    break;
+                }
+                Console.WriteLine("O nome não pode ser vazio");
+            }
 
             while (true)
             {
                 Console.Write("Digite o CPF do aluno: ");
-                cpf = Console.ReadLine() ?? ""; // Evita valor nulo
-                if (!ListaDeAlunos.ExisteCPF(cpf))
+                // Evita valor nulo
+                bool resp = int.TryParse(Console.ReadLine(), out cpf);
+                if (!Escola.ExisteCPF(cpf) && cpf != 0 && resp)
                 {
                     break;
                 }
-                Console.WriteLine("Erro: CPF já cadastrado! Digite novamente: ");
+
+                else if (Escola.ExisteCPF(cpf))
+                {
+                    Console.WriteLine("Erro: CPF já cadastrado! Digite novamente: ");
+                }      
+
+                Console.WriteLine("Campo inválido, verifique os dados fornecidos e digite novamente.");
             }
-            Console.Write("Digite o endereço do aluno: ");
-            endereco = Console.ReadLine() ?? ""; // Evita valor nulo
+
+            while (true)
+            {
+                Console.Write("Digite o endereço do aluno: ");
+                endereco = Console.ReadLine() ?? ""; // Evita valor nulo
+                if (endereco != "")
+                {
+                    break;
+                }
+                Console.WriteLine("O endereço não pode ser vazio, digite novamente.");
+            }
             Console.Write("Digite a data de nascimento (dd/mm/aaaa): ");
             while (true)
             {
@@ -39,29 +57,18 @@ public static class MetodosAlunos
                 {
                     break;
                 }
-                Console.WriteLine("Data inválida, digite novamente.");
+                Console.Write("Data inválida, digite novamente: ");
             }
-
-            if (nome != "" && cpf != "" && endereco != "")
-            {
-                break;
-            }
-            Console.WriteLine("O valor de nenhum dado pode ser vazio. Por favor revise os dados e digite novamente.");
+            break;
         }
 
-        ListaDeAlunos.IncluirNoFim(new Aluno(nome, cpf, endereco, dataNascimento));
+        Escola.IncluirNoFim(new Aluno(nome, cpf, endereco, dataNascimento));
         Console.WriteLine("Aluno cadastrado com sucesso.");
     }
     public static void ExibirAlunos()
     {
         Console.WriteLine("\nLista de Alunos:");
-        ListaDeAlunos.Exibir();
-        Console.ReadKey();
-    }
-    public static void ExibirTurmas()
-    {
-        Console.WriteLine("\nLista de Turmas:");
-        ListaDeTurmas.Exibir();
+        Escola.ExibirAlunos();
         Console.ReadKey();
     }
 }

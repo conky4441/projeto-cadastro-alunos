@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Models;
+namespace ProjetoFinal.Entities.Models;
 public class Turma
 {
     public string Codigo { get; set; }

@@ -40,7 +40,7 @@ public class Program
                     MetodosAlunos.ExibirAlunos();
                     break;
                 case 5:
-                    MetodosAlunos.ExibirTurmas();
+                    MetodosTurmas.ExibirTurmas();
                     break;
                 case 6:
                     Console.WriteLine("Saindo...");
