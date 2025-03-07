@@ -1,6 +1,7 @@
 ﻿using ProjetoFinal.Entities;
 using ProjetoFinal.Entities.Models;
 using ProjetoFinal.Entities.Models.enums.ValidationEnum;
+
 namespace ProjetoFinal.Services;
 
 class MetodosTurmas
@@ -31,13 +32,13 @@ class MetodosTurmas
             endereco = Console.ReadLine() ?? ""; // Evita valor nulo
             while (true)
             {
-                Console.Write("Digite a etapa de ensino: ");
-                bool v = int.TryParse(Console.ReadLine(), out etapaEnsino; // Evita valor nulo
+                Console.Write("Digite a idade do aluno: [Idade Máxima: 18] ");
+                bool v = int.TryParse(Console.ReadLine(), out etapaEnsino); // Evita valor nulo
                 if(v && etapaEnsino > 0 && etapaEnsino < 18)
                 {
                     break;
                 }
-                Console.WriteLine("Etapa de ensino inválida, verifique e digite novamente.");
+                Console.WriteLine("Idade inválida, verifique e digite novamente.");
 
             }
             while (true)
@@ -68,7 +69,7 @@ class MetodosTurmas
             Console.WriteLine("O valor de nenhum dado pode ser vazio. Por favor verifique os dados e digite novamente.\n");
         }
 
-        Escola.AddTurma(new Turma(codigo, etapaEnsino, ano, limiteVagas));
+        Escola.AddTurma(new Turma(codigo, CreatorEnum.Create(etapaEnsino), ano, limiteVagas));
         Console.WriteLine("Turma cadastrada com sucesso.");
     }
     public static void MatricularAluno()

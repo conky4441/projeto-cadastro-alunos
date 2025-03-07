@@ -4,7 +4,7 @@ namespace ProjetoFinal.Entities.Models.enums.ValidationEnum;
 
 static class CreatorEnum
 {
-    static Enum Create(int idade)
+    public static Enum Create(int idade)
     {
 
         if (idade > 0 && idade < 6)
@@ -24,6 +24,7 @@ static class CreatorEnum
             return AnoTurmaEnum.médio;
         }
 
+        throw new ArgumentOutOfRangeException(nameof(idade), "Idade fora do intervalo esperado.");
 
     }
 
