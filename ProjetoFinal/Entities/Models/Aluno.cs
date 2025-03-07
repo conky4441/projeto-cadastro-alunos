@@ -1,5 +1,6 @@
 ﻿namespace ProjetoFinal.Entities.Models;
 using System;
+
 public class Aluno
 {
     public string Nome { get; set; }

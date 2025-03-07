@@ -1,13 +1,14 @@
 ﻿using ProjetoFinal.Entities;
 using ProjetoFinal.Entities.Models;
+using ProjetoFinal.Entities.Models.enums.ValidationEnum;
 namespace ProjetoFinal.Services;
 
 class MetodosTurmas
 {
     public static void CadastrarTurma()
     {
-        string codigo, etapaEnsino, endereco;
-        int ano, limiteVagas;
+        string codigo, endereco;
+        int ano, etapaEnsino, limiteVagas;
 
         while (true)
         {
@@ -28,10 +29,17 @@ class MetodosTurmas
 
             Console.Write("Digite o endereço do aluno: ");
             endereco = Console.ReadLine() ?? ""; // Evita valor nulo
+            while (true)
+            {
+                Console.Write("Digite a etapa de ensino: ");
+                bool v = int.TryParse(Console.ReadLine(), out etapaEnsino; // Evita valor nulo
+                if(v && etapaEnsino > 0 && etapaEnsino < 18)
+                {
+                    break;
+                }
+                Console.WriteLine("Etapa de ensino inválida, verifique e digite novamente.");
 
-            Console.Write("Digite a etapa de ensino: ");
-            etapaEnsino = Console.ReadLine() ?? ""; // Evita valor nulo
-
+            }
             while (true)
             {
                 Console.Write("Digite o ano da turma: ");
@@ -52,7 +60,7 @@ class MetodosTurmas
                 }
                 Console.WriteLine("Limite de vagas inválido.");
             }
-            if (etapaEnsino != "" && endereco != "")
+            if (endereco != "")
             {
                 break;
             }

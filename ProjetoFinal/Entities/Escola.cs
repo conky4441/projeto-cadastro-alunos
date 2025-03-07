@@ -4,7 +4,7 @@ namespace ProjetoFinal.Entities;
 public static class Escola
 {
     public static List<Aluno> Alunos = new List<Aluno>();
-    private static List<Turma> Turmas = new List<Turma>();
+    public static List<Turma> Turmas = new List<Turma>();
 
     public static void IncluirNoFim(Aluno aluno)
     {
