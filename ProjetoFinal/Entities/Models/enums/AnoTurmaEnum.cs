@@ -1,6 +1,6 @@
 ﻿
 
-namespace ProjetoFinal.Entities.Models.enums;
+namespace ProjetoFinal.Entities.models.enums;
 
 public enum AnoTurmaEnum
 {
@@ -8,7 +8,6 @@ public enum AnoTurmaEnum
     fundamentalInicial = 2,
     fundamentalFinal = 3,
     médio = 4
-
 };
 
 

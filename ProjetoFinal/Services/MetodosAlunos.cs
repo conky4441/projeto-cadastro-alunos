@@ -1,14 +1,16 @@
-﻿using ProjetoFinal.Entities;
-using ProjetoFinal.Entities.Models;
+﻿using ProjetoFinal.Entities.repositories;
+using ProjetoFinal.Entities.models;
 
-namespace Services;
-public static class MetodosAlunos
+
+namespace ProjetoFinal.Services;
+public static class MetodosAlunos // Que não dependem de nenhum atributo das listas
 {
     public static void CadastrarAluno()
     {
         string nome, endereco;
         int cpf;
         DateTime dataNascimento;
+        var lista = new ListaDeAlunos();
         while (true)
         {
             while (true)
@@ -27,15 +29,15 @@ public static class MetodosAlunos
                 Console.Write("Digite o CPF do aluno: ");
                 // Evita valor nulo
                 bool resp = int.TryParse(Console.ReadLine(), out cpf);
-                if (!Escola.ExisteCPF(cpf) && cpf != 0 && resp)
+                if (!lista.ExisteCPF(cpf) && cpf != 0 && resp)
                 {
                     break;
                 }
 
-                else if (Escola.ExisteCPF(cpf))
+                else if (lista.ExisteCPF(cpf))
                 {
                     Console.WriteLine("Erro: CPF já cadastrado! Digite novamente: ");
-                }      
+                }
 
                 Console.WriteLine("Campo inválido, verifique os dados fornecidos e digite novamente.");
             }
@@ -50,25 +52,48 @@ public static class MetodosAlunos
                 }
                 Console.WriteLine("O endereço não pode ser vazio, digite novamente.");
             }
-            Console.Write("Digite a data de nascimento (dd/mm/aaaa): ");
+            Console.Write("Digite a data de nascimento (dd/mm/aaaa) [Máximo de 18 anos]: ");
             while (true)
             {
                 if (DateTime.TryParse(Console.ReadLine(), out dataNascimento))
                 {
-                    break;
+                    if (DateTime.Now.Year - dataNascimento.Year < 19 && dataNascimento < DateTime.Now)
+                    {
+                        break;
+                    }
                 }
-                Console.Write("Data inválida, digite novamente: ");
+                Console.Write("Houve um erro, verifique se digitou a data corretamente.");
+                Console.ReadKey();
+                Console.WriteLine();
+                Console.Write("Digite novamente (dd/mm/aaaa): ");
             }
+            var aluno = new Aluno(nome, cpf, endereco, dataNascimento);
+
+           while (true) 
+            { 
+                Console.WriteLine("Como deseja incluir o aluno na lista de alunos?");
+                Console.WriteLine("1 - [Incluir no inicio da lista]\n2 - [Incluir no final da lista]");
+                if(int.TryParse(Console.ReadLine(), out int opcao))
+                {
+                    if(opcao == 1)
+                    {
+                        lista.IncluirNoInicio(aluno);
+                        break;
+                    }
+                    else if(opcao == 2)
+                    {
+                        lista.IncluirNoFim(aluno);
+                        break;
+                    }
+                    
+                }
+                Console.WriteLine("Opção inválida\n. Digite novamente: ");             
+            }
+
             break;
         }
 
-        Escola.IncluirNoFim(new Aluno(nome, cpf, endereco, dataNascimento));
-        Console.WriteLine("Aluno cadastrado com sucesso.");
+      
     }
-    public static void ExibirAlunos()
-    {
-        Console.WriteLine("\nLista de Alunos:");
-        Escola.ExibirAlunos();
-        Console.ReadKey();
-    }
+    
 }

@@ -1,5 +1,6 @@
-﻿using ProjetoFinal.Entities.Models.enums;
-using System;
+﻿using ProjetoFinal.Entities.repositories;
+using ProjetoFinal.Entities.models;
+using ProjetoFinal.Entities.models.enums;
 
 namespace ProjetoFinal.Entities.Models;
 public class Turma
@@ -8,6 +9,7 @@ public class Turma
     public AnoTurmaEnum EtapaEnsino { get; set; }
     public int Ano { get; set; }
     public int LimiteVagas { get; set; }
+    public List<Aluno> Alunos { get; set; } = new List<Aluno>();
 
     public Turma(string codigo, Enum etapaEnsino, int ano, int limiteVagas)
     {
@@ -16,4 +18,10 @@ public class Turma
         Ano = ano;
         LimiteVagas = limiteVagas;
     }
+
+    public void AdicionarAlunoATurma(Aluno aluno)
+    {
+        Alunos.Add(aluno);
+    }
+  
 }
