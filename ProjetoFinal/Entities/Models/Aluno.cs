@@ -32,7 +32,7 @@ public class Aluno() : IComparable<Aluno>
     {
         var hoje = DateTime.Now;
         Idade = hoje.Year - DataNascimento.Year;
-        return $"Nome: {Nome}, CPF: {Cpf} Idade: {Idade} anos, Endereço: {Endereco}";
+        return $"Nome: {Nome}, Idade: {Idade} anos, CPF {Cpf}";
     }
 
     public int CompareTo(Aluno? obj)

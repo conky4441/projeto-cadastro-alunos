@@ -10,7 +10,7 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
         string nome, endereco;
         int cpf;
         DateTime dataNascimento;
-        var lista = new ListaDeAlunos();
+
         while (true)
         {
             while (true)
@@ -29,17 +29,16 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
                 Console.Write("Digite o CPF do aluno: ");
                 // Evita valor nulo
                 bool resp = int.TryParse(Console.ReadLine(), out cpf);
-                if (!lista.ExisteCPF(cpf) && cpf != 0 && resp)
+                if (!ListaDeAlunos.ExisteCPF(cpf) && cpf != 0 && resp)
                 {
                     break;
                 }
 
-                else if (lista.ExisteCPF(cpf))
+                else if (ListaDeAlunos.ExisteCPF(cpf))
                 {
                     Console.WriteLine("Erro: CPF já cadastrado! Digite novamente: ");
                 }
 
-                Console.WriteLine("Campo inválido, verifique os dados fornecidos e digite novamente.");
             }
 
             while (true)
@@ -77,12 +76,12 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
                 {
                     if(opcao == 1)
                     {
-                        lista.IncluirNoInicio(aluno);
+                        ListaDeAlunos.IncluirNoInicio(aluno);
                         break;
                     }
                     else if(opcao == 2)
                     {
-                        lista.IncluirNoFim(aluno);
+                        ListaDeAlunos.IncluirNoFim(aluno);
                         break;
                     }
                     

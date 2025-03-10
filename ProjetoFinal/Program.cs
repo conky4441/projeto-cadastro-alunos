@@ -7,7 +7,7 @@ public class Program
     public static void Main()
     {
         int opcao, menu;
-        var lista = new ListaDeAlunos();
+        var turmas = new ListaDeTurmas();
 
         do
         {
@@ -15,9 +15,12 @@ public class Program
             Console.WriteLine("1. Opções Referentes a Alunos");
             Console.WriteLine("2. Opções Referentes a Turmas");
             Console.WriteLine("3. Sair do Programa");
+            Console.WriteLine("----------------------------");
+            Console.Write("Escolha uma opção: ");
             if (!int.TryParse(Console.ReadLine(), out menu) || menu < 1 || menu > 3)
             {
                 Console.WriteLine("Opção inválida.");
+                Console.ReadKey();
                 continue;
             }
             if (menu == 1)
@@ -26,15 +29,16 @@ public class Program
                 {
                     Console.WriteLine();
                     Console.WriteLine("1. Cadastrar Aluno");
-                    Console.WriteLine("2. Matricular Aluno em Turma");
-                    Console.WriteLine("3. Exibir Alunos");
-                    Console.WriteLine("4. Quantidade de Alunos");
-                    Console.WriteLine("5. Voltar ao Menu Anterior");
+                    Console.WriteLine("2. Exibir Alunos");
+                    Console.WriteLine("3. Quantidade de Alunos");
+                    Console.WriteLine("4. Voltar ao Menu Anterior");
+                    Console.WriteLine("----------------------------");
                     Console.Write("Escolha uma opção: ");
 
                     if (!int.TryParse(Console.ReadLine(), out opcao))
                     {
-                        Console.WriteLine("Opção inválisda.");
+                        Console.WriteLine("Opção inválida.");
+                        Console.ReadKey();
                         continue;
                     }
 
@@ -42,23 +46,21 @@ public class Program
                     {
                         case 1:
                             MetodosAlunos.CadastrarAluno();
-                            break;
+                            break;                   
                         case 2:
-                            MetodosTurmas.MatricularAluno();
+                            ListaDeAlunos.ExibirAlunos();
                             break;
                         case 3:
-                            lista.ExibirAlunos();
+                            ListaDeAlunos.QuantidadeAlunos();
                             break;
                         case 4:
-                            lista.QuantidadeAlunos();
-                            break;
-                        case 5:
                             break;
                         default:
                             Console.WriteLine("Opção inválida.");
+                            Console.ReadKey();
                             break;
                     }
-                } while (opcao != 5);
+                } while (opcao != 4);
             }
             else if (menu == 2)
             {
@@ -68,41 +70,40 @@ public class Program
                     Console.WriteLine("1. Cadastrar Turma");
                     Console.WriteLine("2. Matricular Aluno em Turma");
                     Console.WriteLine("3. Exibir Turmas");
-                    Console.WriteLine("4. Quantidade de Alunos");
-                    Console.WriteLine("5. Voltar ao Menu Anterior");
+                    Console.WriteLine("4. Voltar ao Menu Anterior");                  
+                    Console.WriteLine("----------------------------");
                     Console.Write("Escolha uma opção: ");
 
                     if (!int.TryParse(Console.ReadLine(), out opcao))
                     {
                         Console.WriteLine("Opção inválida.");
+                        Console.ReadKey();
                         continue;
                     }
 
                     switch (opcao)
                     {
                         case 1:
-                            MetodosAlunos.CadastrarAluno();
+                            MetodosTurmas.CriarTurma(turmas);
                             break;
                         case 2:
-                            MetodosTurmas.MatricularAluno();
+                            MetodosTurmas.MatricularAluno(turmas);
                             break;
                         case 3:
-                            lista.ExibirAlunos();
+                            MetodosTurmas.ExibirTurmas(turmas);
                             break;
                         case 4:
-                            MetodosTurmas.ExibirTurmas();
-                            break;
-                        case 5:
                             break;
                         default:
                             Console.WriteLine("Opção inválida.");
+                            Console.ReadKey();
                             break;
                     }
-                } while (opcao != 5);
+                } while (opcao != 4);
             }
 
         } while (menu != 3);
-
+        Console.WriteLine("------------------------------------------");
         Console.WriteLine("Muito obrigado por utilizar nosso serviço");
     }
 }
