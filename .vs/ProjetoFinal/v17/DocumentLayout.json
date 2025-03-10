@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\entities\\escola.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\entities\\escola.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\services\\metodosalunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\services\\metodosalunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\services\\metodosturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\services\\metodosturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\entities\\repositories\\listadealunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\entities\\repositories\\listadealunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\entities\\repositories\\listadeturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\entities\\repositories\\listadeturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\services\\metodosturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\services\\metodosturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\services\\metodosalunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\services\\metodosalunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\entities\\models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\entities\\models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\entities\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\entities\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|d:\\trabalhos facul\\projetofinal\\projeto-cadastro-alunos\\projetofinal\\projetofinal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{E4699111-C7D6-4658-961C-CC0EDB582A4D}|ProjetoFinal\\ProjetoFinal.csproj|solutionrelative:projetofinal\\projetofinal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,88 +46,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProjetoFinal.csproj",
-              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\ProjetoFinal.csproj",
-              "RelativeDocumentMoniker": "ProjetoFinal\\ProjetoFinal.csproj",
-              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\ProjetoFinal.csproj",
-              "RelativeToolTip": "ProjetoFinal\\ProjetoFinal.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-06T21:52:17.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Escola.cs",
-              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\Escola.cs",
-              "RelativeDocumentMoniker": "ProjetoFinal\\Entities\\Escola.cs",
-              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\Escola.cs*",
-              "RelativeToolTip": "ProjetoFinal\\Entities\\Escola.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAEAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ListaDeTurmas.cs",
+              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\repositories\\ListaDeTurmas.cs",
+              "RelativeDocumentMoniker": "ProjetoFinal\\Entities\\repositories\\ListaDeTurmas.cs",
+              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\repositories\\ListaDeTurmas.cs",
+              "RelativeToolTip": "ProjetoFinal\\Entities\\repositories\\ListaDeTurmas.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T05:23:45.389Z",
+              "WhenOpened": "2025-03-09T04:53:45.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MetodosTurmas.cs",
-              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Services\\MetodosTurmas.cs",
-              "RelativeDocumentMoniker": "ProjetoFinal\\Services\\MetodosTurmas.cs",
-              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Services\\MetodosTurmas.cs",
-              "RelativeToolTip": "ProjetoFinal\\Services\\MetodosTurmas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Turma.cs",
+              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\models\\Turma.cs",
+              "RelativeDocumentMoniker": "ProjetoFinal\\Entities\\models\\Turma.cs",
+              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\models\\Turma.cs",
+              "RelativeToolTip": "ProjetoFinal\\Entities\\models\\Turma.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T05:20:31.645Z"
+              "WhenOpened": "2025-03-09T04:52:34.871Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Turma.cs",
-              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\Models\\Turma.cs",
-              "RelativeDocumentMoniker": "ProjetoFinal\\Entities\\Models\\Turma.cs",
-              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\Models\\Turma.cs",
-              "RelativeToolTip": "ProjetoFinal\\Entities\\Models\\Turma.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T05:08:28.026Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Aluno.cs",
-              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\Models\\Aluno.cs",
-              "RelativeDocumentMoniker": "ProjetoFinal\\Entities\\Models\\Aluno.cs",
-              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\Models\\Aluno.cs",
-              "RelativeToolTip": "ProjetoFinal\\Entities\\Models\\Aluno.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T05:05:54.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "MetodosAlunos.cs",
               "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Services\\MetodosAlunos.cs",
               "RelativeDocumentMoniker": "ProjetoFinal\\Services\\MetodosAlunos.cs",
               "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Services\\MetodosAlunos.cs",
               "RelativeToolTip": "ProjetoFinal\\Services\\MetodosAlunos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T05:02:30.697Z"
+              "WhenOpened": "2025-03-09T04:37:47.104Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "MetodosTurmas.cs",
+              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Services\\MetodosTurmas.cs",
+              "RelativeDocumentMoniker": "ProjetoFinal\\Services\\MetodosTurmas.cs",
+              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Services\\MetodosTurmas.cs",
+              "RelativeToolTip": "ProjetoFinal\\Services\\MetodosTurmas.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAgwHwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T00:18:45.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Program.cs",
               "RelativeDocumentMoniker": "ProjetoFinal\\Program.cs",
               "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Program.cs",
               "RelativeToolTip": "ProjetoFinal\\Program.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T01:09:31.616Z"
+              "WhenOpened": "2025-03-07T21:58:29.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListaDeAlunos.cs",
+              "DocumentMoniker": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\repositories\\ListaDeAlunos.cs",
+              "RelativeDocumentMoniker": "ProjetoFinal\\Entities\\repositories\\ListaDeAlunos.cs",
+              "ToolTip": "D:\\Trabalhos Facul\\ProjetoFinal\\projeto-cadastro-alunos\\ProjetoFinal\\Entities\\repositories\\ListaDeAlunos.cs",
+              "RelativeToolTip": "ProjetoFinal\\Entities\\repositories\\ListaDeAlunos.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T21:58:26.255Z",
+              "EditorCaption": ""
             }
           ]
         }
