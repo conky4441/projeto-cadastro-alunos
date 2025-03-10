@@ -68,31 +68,96 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
             }
             var aluno = new Aluno(nome, cpf, endereco, dataNascimento);
 
-           while (true) 
-            { 
+            while (true)
+            {
                 Console.WriteLine("Como deseja incluir o aluno na lista de alunos?");
                 Console.WriteLine("1 - [Incluir no inicio da lista]\n2 - [Incluir no final da lista]");
-                if(int.TryParse(Console.ReadLine(), out int opcao))
+                if (int.TryParse(Console.ReadLine(), out int opcao))
                 {
-                    if(opcao == 1)
+                    if (opcao == 1)
                     {
                         ListaDeAlunos.IncluirNoInicio(aluno);
                         break;
                     }
-                    else if(opcao == 2)
+                    else if (opcao == 2)
                     {
                         ListaDeAlunos.IncluirNoFim(aluno);
                         break;
                     }
-                    
+
                 }
-                Console.WriteLine("Opção inválida\n. Digite novamente: ");             
+                Console.WriteLine("Opção inválida\n. Digite novamente: ");
             }
 
             break;
         }
 
-      
+
     }
-    
+    public static void ProcurarCpf()
+    {
+        while (true)
+        {
+            Console.Write("Digite o CPF do aluno: ");
+            if (int.TryParse(Console.ReadLine(), out int cpf))
+            {
+                if (ListaDeAlunos.ExisteCPF(cpf))
+                {
+
+                    Console.WriteLine(ListaDeAlunos.RetornarAluno(cpf));
+                    Console.ReadKey();
+                    return;
+                }
+            }
+            while (true)
+            {
+                Console.WriteLine("Houve um problema com o CPF digitado.");
+                Console.WriteLine("Deseja digitar outro número ou voltar ao Menu?");
+                Console.WriteLine("[1] - Digitar outro número [2] - Retornar ao Menu");
+                if (int.TryParse(Console.ReadLine(), out int menu))
+                {
+                    if (menu == 1)
+                    {
+                        break;
+                    }
+                    if (menu == 2)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    public static void IndiceLista()
+    {
+        while (true)
+        {
+            Console.Write("Digite o indice da lista: ");
+            if (int.TryParse(Console.ReadLine(), out int indice))
+            {
+
+                ListaDeAlunos.Get(indice);
+                return;
+
+            }
+            while (true)
+            {
+                Console.WriteLine("Houve um problema com o Indice fornecido.");
+                Console.WriteLine("Deseja digitar outro número ou voltar ao Menu?");
+                Console.WriteLine("[1] - Digitar outro número [2] - Retornar ao Menu");
+                if (int.TryParse(Console.ReadLine(), out int menu))
+                {
+                    if (menu == 1)
+                    {
+                        break;
+                    }
+                    if (menu == 2)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+    }
 }

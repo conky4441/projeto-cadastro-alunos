@@ -55,7 +55,7 @@ public class ListaDeTurmas
                 return;
             }
         
-            Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
+            //Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
             Console.Write("Alunos: ");
             foreach (var a in v)
             {
@@ -66,10 +66,10 @@ public class ListaDeTurmas
         }
 
     }
-    public int AlunosForaIdade()
-    {
-        var
-    }
+    //public int AlunosForaIdade()
+    //{
+    //    var
+    //}
 }
 
 

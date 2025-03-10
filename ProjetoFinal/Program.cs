@@ -29,9 +29,12 @@ public class Program
                 {
                     Console.WriteLine();
                     Console.WriteLine("1. Cadastrar Aluno");
-                    Console.WriteLine("2. Exibir Alunos");
-                    Console.WriteLine("3. Quantidade de Alunos");
-                    Console.WriteLine("4. Voltar ao Menu Anterior");
+                    Console.WriteLine("2. Encontrar aluno por CPF");
+                    Console.WriteLine("3. Encontrar aluno em posição da lista [A lista inicia na posição: 0] ");
+                    Console.WriteLine("4. Quantidade de alunos");
+                    Console.WriteLine("5. Ordernar a lista de alunos por ordem alfabetica");
+                    Console.WriteLine("6. Remover o último aluno da lista");
+                    Console.WriteLine("7. Voltar ao Menu Anterior");
                     Console.WriteLine("----------------------------");
                     Console.Write("Escolha uma opção: ");
 
@@ -46,21 +49,30 @@ public class Program
                     {
                         case 1:
                             MetodosAlunos.CadastrarAluno();
-                            break;                   
+                            break;
                         case 2:
-                            ListaDeAlunos.ExibirAlunos();
+                            MetodosAlunos.ProcurarCpf();
                             break;
                         case 3:
-                            ListaDeAlunos.QuantidadeAlunos();
+                            MetodosAlunos.IndiceLista();
                             break;
                         case 4:
+                            ListaDeAlunos.QuantidadeAlunos();
+                            break;
+                        case 5: //Ordernar os alunos
+                            ListaDeAlunos.ExibirAlunos();
+                            break;
+                        case 6:
+                            ListaDeAlunos.RemoverDoFim();
+                            break;
+                        case 7:
                             break;
                         default:
                             Console.WriteLine("Opção inválida.");
                             Console.ReadKey();
                             break;
                     }
-                } while (opcao != 4);
+                } while (opcao != 6);
             }
             else if (menu == 2)
             {
@@ -70,7 +82,7 @@ public class Program
                     Console.WriteLine("1. Cadastrar Turma");
                     Console.WriteLine("2. Matricular Aluno em Turma");
                     Console.WriteLine("3. Exibir Turmas");
-                    Console.WriteLine("4. Voltar ao Menu Anterior");                  
+                    Console.WriteLine("4. Voltar ao Menu Anterior");
                     Console.WriteLine("----------------------------");
                     Console.Write("Escolha uma opção: ");
 
@@ -104,7 +116,7 @@ public class Program
 
         } while (menu != 3);
         Console.WriteLine("------------------------------------------");
-        Console.WriteLine("Muito obrigado por utilizar nosso serviço");
+        Console.WriteLine("Muito obrigado por utilizar nosso serviço!");
     }
 }
 

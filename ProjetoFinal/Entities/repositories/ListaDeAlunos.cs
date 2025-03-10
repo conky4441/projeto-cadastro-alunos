@@ -7,7 +7,7 @@ public static class ListaDeAlunos //É uma lista encadeada
 {
     private static Aluno? Inicio = null;
     private static int Tamanho;
-  
+
 
     //Métodos pedidos pelo projeto
     public static void IncluirNoFim(Aluno aluno)
@@ -51,7 +51,6 @@ public static class ListaDeAlunos //É uma lista encadeada
     }
     public static void RemoverDoFim()
     {
-
         if (Inicio == null)
         {
             Console.WriteLine("Não há nenhum aluno cadastrado.");
@@ -61,18 +60,18 @@ public static class ListaDeAlunos //É uma lista encadeada
         {
             Inicio = null;
             Tamanho--;
+            Console.WriteLine("Último aluno da lista removido com sucesso.");
             return;
         }
 
         var alunoAtual = Inicio;
         while (alunoAtual.Proximo != null && alunoAtual.Proximo.Proximo != null)
-        //Precisei verificar se o segundo valor é null novamente pq o compilador é burro e ficou reclamando
-        //Mas a primeira verificação do while é desnecessária, pois teria caído no else if
         {
             alunoAtual = alunoAtual.Proximo;
         }
         alunoAtual.Proximo = null; //Torno a referencia do penultimo nula, excluindo assim o ultimo objeto
         Tamanho--;
+        Console.WriteLine("Último aluno da lista removido com sucesso.");
 
     }
     public static void QuantidadeAlunos()
@@ -82,7 +81,7 @@ public static class ListaDeAlunos //É uma lista encadeada
     }
     public static void ExibirAlunos()
     {
-        Console.WriteLine($"Total de alunos cadastrados: {Tamanho}");
+
         var aluno = Inicio;
         if (aluno == null)
         {
@@ -90,7 +89,6 @@ public static class ListaDeAlunos //É uma lista encadeada
             Console.ReadKey();
             return;
         }
-
         while (aluno != null)
         {
             Console.WriteLine(aluno);
@@ -100,12 +98,32 @@ public static class ListaDeAlunos //É uma lista encadeada
 
     }
 
- 
+    public static void Get(int index)
+    {
+        var atual = Inicio;
+        int contador = 0;
+
+        while (atual != null)
+        {
+            if (contador == index)
+            {
+                Console.WriteLine(atual);
+                Console.ReadKey();
+            }
+            atual = atual.Proximo;
+            contador++;
+        }
+        Console.WriteLine("Não há nenhum aluno nessa posição da lista");
+        Console.ReadKey();
+        return;
+
+    }
+
     public static Aluno? RetornarAluno(int cpf)
     {
-        var aluno = Inicio;  
+        var aluno = Inicio;
         while (aluno != null)
-        {     
+        {
             if (aluno.Cpf == cpf)
             {
                 return aluno;
@@ -163,6 +181,7 @@ public static class ListaDeAlunos //É uma lista encadeada
         }
         return false;
     }
+
 }
 
 
