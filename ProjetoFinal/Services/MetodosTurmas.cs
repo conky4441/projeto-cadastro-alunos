@@ -73,73 +73,72 @@ public static class MetodosTurmas
         string codigo;
         var turma = turmaMatricula;
 
+
         while (true)
         {
+            Console.Write("Digite o CPF do aluno: ");
+            if (int.TryParse(Console.ReadLine(), out cpf)) 
+            {
+                if (ListaDeAlunos.ExisteCPF(cpf))
+                {
+                    break;
+                }
+            }
             while (true)
             {
-                Console.Write("Digite o CPF do aluno: ");
-                if (int.TryParse(Console.ReadLine(), out cpf)) //Verificando se é um número
+                Console.WriteLine("Houve um problema com o número digitado.\nDseja digitar outro? [1] ou Cancelar a Ação? [2]");
+                if (int.TryParse(Console.ReadLine(), out int sair))
                 {
-                    if (ListaDeAlunos.ExisteCPF(cpf))
+                    if (sair == 1)
                     {
                         break;
                     }
-                }
-                while (true)
-                {
-                    Console.WriteLine("Houve um problema com o número digitado.\nDseja digitar outro? [1] ou Cancelar a Ação? [2]");
-                    if (int.TryParse(Console.ReadLine(), out int sair))
+                    if (sair == 2)
                     {
-                        if (sair == 1)
-                        {
-                            break;
-                        }
-                        if (sair == 2)
-                        {
-                            return;
-                        }
-
+                        return;
                     }
-                   
+
                 }
+
             }
-
-            while (true)
-            {
-                Console.Write("Digite o código da turma: ");
-                codigo = Console.ReadLine() ?? "";
-                if (turma.ExisteCodigoTurma(codigo))
-                {
-                    var vagas = turma.Turmas.Where(a => a.Codigo == codigo).Select(a => a.LimiteVagas).FirstOrDefault();
-                    if (vagas != 0)
-                    {
-                        break;
-                    }
-                }
-                while (true)
-                {
-                    Console.WriteLine("Houve um problema com o número digitado.\nDseja digitar outro? [1] ou Cancelar a Ação? [2]");
-                    if (int.TryParse(Console.ReadLine(), out int sair))
-                    {
-                        if (sair == 1)
-                        {
-                            break;
-                        }
-                        if (sair == 2)
-                        {
-                            return;
-                        }
-
-                    }
-                }
-            }
-            turma.AdicionarPorCodigo(cpf, codigo);
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("Aluno matriculado na turma com sucesso.");
-            Console.ReadKey();
-            break;
         }
+
+        while (true)
+        {
+            Console.Write("Digite o código da turma: ");
+            codigo = Console.ReadLine() ?? "";
+            if (turma.ExisteCodigoTurma(codigo))
+            {
+                var vagas = turma.Turmas.Where(a => a.Codigo == codigo).Select(a => a.LimiteVagas).FirstOrDefault();
+                if (vagas != 0)
+                {
+                    break;
+                }
+            }
+            while (true)
+            {
+                Console.WriteLine("Houve um problema com o número digitado.\nDseja digitar outro? [1] ou Cancelar a Ação? [2]");
+                if (int.TryParse(Console.ReadLine(), out int sair))
+                {
+                    if (sair == 1)
+                    {
+                        break;
+                    }
+                    if (sair == 2)
+                    {
+                        return;
+                    }
+
+                }
+            }
+        }
+        turma.AdicionarPorCodigo(cpf, codigo);
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("Aluno matriculado na turma com sucesso.");
+        Console.ReadKey();
+
     }
+    
     public static void ExibirTurmas(ListaDeTurmas turmaDeAlunos)
     {
         if (turmaDeAlunos.Turmas.Count == 0)

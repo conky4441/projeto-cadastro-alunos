@@ -32,9 +32,10 @@ public class Program
                     Console.WriteLine("2. Encontrar aluno por CPF");
                     Console.WriteLine("3. Encontrar aluno em posição da lista [A lista inicia na posição: 0] ");
                     Console.WriteLine("4. Quantidade de alunos");
-                    Console.WriteLine("5. Ordernar a lista de alunos por ordem alfabetica");
-                    Console.WriteLine("6. Remover o último aluno da lista");
-                    Console.WriteLine("7. Voltar ao Menu Anterior");
+                    Console.WriteLine("5. Exibir alunos");
+                    Console.WriteLine("6. Ordernar a lista de alunos por ordem alfabetica");
+                    Console.WriteLine("7. Remover o último aluno da lista");
+                    Console.WriteLine("8. Voltar ao Menu Anterior");
                     Console.WriteLine("----------------------------");
                     Console.Write("Escolha uma opção: ");
 
@@ -59,20 +60,25 @@ public class Program
                         case 4:
                             ListaDeAlunos.QuantidadeAlunos();
                             break;
-                        case 5: //Ordernar os alunos
+                        case 5:
                             ListaDeAlunos.ExibirAlunos();
                             break;
-                        case 6:
-                            ListaDeAlunos.RemoverDoFim();
+
+                        case 6: //Ordernar os alunos por ordem alfabetica
+                            ListaDeAlunos.OrdernarAlunos();
+                            ListaDeAlunos.ExibirAlunos();
                             break;
                         case 7:
+                            ListaDeAlunos.RemoverDoFim();
+                            break;
+                        case 8:
                             break;
                         default:
                             Console.WriteLine("Opção inválida.");
                             Console.ReadKey();
                             break;
                     }
-                } while (opcao != 6);
+                } while (opcao != 8);
             }
             else if (menu == 2)
             {

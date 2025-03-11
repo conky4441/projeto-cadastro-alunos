@@ -79,6 +79,53 @@ public static class ListaDeAlunos //É uma lista encadeada
         Console.WriteLine($"Quantidade de alunos: {Tamanho}");
         Console.ReadKey();
     }
+
+    public static void OrdernarAlunos()
+    {
+        if (Inicio == null || Inicio.Proximo == null) return;
+
+        bool trocou;
+        do
+        {
+            trocou = false;
+            Aluno? anterior = null;
+            Aluno? atual = Inicio;
+            Aluno? proximo = Inicio?.Proximo;
+
+            while (proximo != null)
+            {
+                if (string.Compare(atual!.Nome, proximo.Nome, StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    // Troca os nós ajustando os ponteiros
+                    if (anterior == null)
+                    {
+                        // Mudando o início da lista
+                        Inicio = proximo;
+                    }
+                    else
+                    {
+                        anterior.Proximo = proximo;
+                    }
+
+                    atual.Proximo = proximo.Proximo;
+                    proximo.Proximo = atual;
+
+                    // Atualiza os ponteiros para continuar o loop corretamente
+                    trocou = true;
+                    anterior = proximo;
+                    proximo = atual.Proximo;
+                }
+                else
+                {
+                    
+                    anterior = atual;
+                    atual = proximo;
+                    proximo = proximo.Proximo;
+                }
+            }
+        } while (trocou);
+    }
+    
     public static void ExibirAlunos()
     {
 
@@ -97,7 +144,6 @@ public static class ListaDeAlunos //É uma lista encadeada
         Console.ReadKey();
 
     }
-
     public static void Get(int index)
     {
         var atual = Inicio;
@@ -109,6 +155,7 @@ public static class ListaDeAlunos //É uma lista encadeada
             {
                 Console.WriteLine(atual);
                 Console.ReadKey();
+                return;
             }
             atual = atual.Proximo;
             contador++;
@@ -126,7 +173,8 @@ public static class ListaDeAlunos //É uma lista encadeada
         {
             if (aluno.Cpf == cpf)
             {
-                return aluno;
+                var copiaAluno = aluno;
+                return copiaAluno;
             }
             aluno = aluno.Proximo;
 

@@ -1,7 +1,6 @@
 ﻿
+using ProjetoFinal.Entities.models.enums;
 using ProjetoFinal.Entities.Models;
-
-
 
 namespace ProjetoFinal.Entities.repositories;
 
@@ -54,8 +53,8 @@ public class ListaDeTurmas
             {
                 return;
             }
-        
-            //Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
+
+            Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
             Console.Write("Alunos: ");
             foreach (var a in v)
             {
@@ -66,11 +65,38 @@ public class ListaDeTurmas
         }
 
     }
-    //public int AlunosForaIdade()
-    //{
-    //    var
-    //}
+    public int AlunosForaIdade()
+    {
+        int totalForaFaixa = 0;
+
+        foreach (var turma in Turmas)
+        {
+            foreach (var aluno in turma.Alunos)
+            {
+                if (!IdadeEstaDentroDaFaixa(aluno.Idade, turma.EtapaEnsino))
+                {
+                    totalForaFaixa++;
+                }
+            }
+        }
+
+        return totalForaFaixa;
+    }
+
+
+    private bool IdadeEstaDentroDaFaixa(int idade, AnoTurmaEnum etapa)
+    {
+        return etapa switch
+        {
+            AnoTurmaEnum.infantil => idade > 0 && idade < 6,
+            AnoTurmaEnum.fundamentalInicial => idade >= 6 && idade < 11,
+            AnoTurmaEnum.fundamentalFinal => idade >= 11 && idade <= 14,
+            AnoTurmaEnum.médio => idade >= 15 && idade <= 17,
+            _ => false
+        };
+    }
 }
+
 
 
 
