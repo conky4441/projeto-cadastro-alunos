@@ -1,4 +1,4 @@
-﻿using ProjetoFinal.Entities.repositories;
+﻿using ProjetoFinal.Entities.listas;
 using ProjetoFinal.Entities.models;
 using ProjetoFinal.Entities.models.enums;
 

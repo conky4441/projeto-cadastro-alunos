@@ -2,7 +2,7 @@
 
 
 
-namespace ProjetoFinal.Entities.repositories;
+namespace ProjetoFinal.Entities.listas;
 public static class ListaDeAlunos //É uma lista encadeada
 {
     private static Aluno? Inicio = null;
@@ -18,7 +18,10 @@ public static class ListaDeAlunos //É uma lista encadeada
         {
             Inicio = novoAluno;
             Tamanho++;
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.WriteLine($"Aluno {aluno.Nome} adicionado ao final da lista.");
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.ReadKey();
             return;
         }
 
@@ -29,7 +32,10 @@ public static class ListaDeAlunos //É uma lista encadeada
         }
         alunoAtual.Proximo = novoAluno;
         Tamanho++;
+        Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine($"Aluno {aluno.Nome} adicionado ao final da lista.");
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.ReadKey();
 
     }
     public static void IncluirNoInicio(Aluno aluno)
@@ -40,27 +46,39 @@ public static class ListaDeAlunos //É uma lista encadeada
         {
             Inicio = novoAluno;
             Tamanho++;
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.WriteLine($"Aluno {aluno.Nome} adicionado ao início da lista.");
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.ReadKey();
             return;
         }
         Aluno alunoInicial = Inicio;
         Inicio = novoAluno;
         Inicio.Proximo = alunoInicial;
         Tamanho++;
+        Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine($"Aluno {aluno.Nome} adicionado ao início da lista.");
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.ReadKey();
     }
     public static void RemoverDoFim()
     {
         if (Inicio == null)
         {
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.WriteLine("Não há nenhum aluno cadastrado.");
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.ReadKey();
             return;
         }
         else if (Inicio.Proximo == null)
         {
             Inicio = null;
             Tamanho--;
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.WriteLine("Último aluno da lista removido com sucesso.");
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.ReadKey();
             return;
         }
 
@@ -71,12 +89,17 @@ public static class ListaDeAlunos //É uma lista encadeada
         }
         alunoAtual.Proximo = null; //Torno a referencia do penultimo nula, excluindo assim o ultimo objeto
         Tamanho--;
+        Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine("Último aluno da lista removido com sucesso.");
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.ReadKey();
 
     }
     public static void QuantidadeAlunos()
     {
+        Console.WriteLine("----------------------------------------------------------------------");
         Console.WriteLine($"Quantidade de alunos: {Tamanho}");
+        Console.WriteLine("----------------------------------------------------------------------");
         Console.ReadKey();
     }
 
@@ -117,7 +140,7 @@ public static class ListaDeAlunos //É uma lista encadeada
                 }
                 else
                 {
-                    
+
                     anterior = atual;
                     atual = proximo;
                     proximo = proximo.Proximo;
@@ -125,22 +148,26 @@ public static class ListaDeAlunos //É uma lista encadeada
             }
         } while (trocou);
     }
-    
+
     public static void ExibirAlunos()
     {
 
         var aluno = Inicio;
         if (aluno == null)
         {
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.WriteLine("Não há nenhum aluno cadastrado.");
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.ReadKey();
             return;
         }
+        Console.WriteLine("----------------------------------------------------------------------");
         while (aluno != null)
         {
             Console.WriteLine(aluno);
             aluno = aluno.Proximo;
         }
+        Console.WriteLine("----------------------------------------------------------------------");
         Console.ReadKey();
 
     }
@@ -161,6 +188,7 @@ public static class ListaDeAlunos //É uma lista encadeada
             contador++;
         }
         Console.WriteLine("Não há nenhum aluno nessa posição da lista");
+        Console.WriteLine("----------------------------------------------------------------------");
         Console.ReadKey();
         return;
 
@@ -185,17 +213,9 @@ public static class ListaDeAlunos //É uma lista encadeada
     //Métodos para verificação de cadastro
     public static bool ExisteCPF(int cpf)
     {
-        if (Inicio == null)
-        {
-            return false;
-        }
-        if (Inicio.Cpf == cpf)
-        {
-            return true;
-        }
 
         Aluno alunoAtual = Inicio;
-        while (alunoAtual.Proximo != null)
+        while (alunoAtual != null)
         {
             if (alunoAtual.Cpf == cpf)
             {

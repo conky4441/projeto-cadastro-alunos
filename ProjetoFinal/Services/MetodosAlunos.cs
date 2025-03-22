@@ -1,16 +1,16 @@
-﻿using ProjetoFinal.Entities.repositories;
+﻿using ProjetoFinal.Entities.listas;
 using ProjetoFinal.Entities.models;
 
 
 namespace ProjetoFinal.Services;
-public static class MetodosAlunos // Que não dependem de nenhum atributo das listas
+public static class MetodosAlunos 
 {
     public static void CadastrarAluno()
     {
         string nome, endereco;
         int cpf;
         DateTime dataNascimento;
-
+        Console.WriteLine("----------------------------------------------------------------------");
         while (true)
         {
             while (true)
@@ -61,17 +61,20 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
                         break;
                     }
                 }
+                Console.WriteLine("----------------------------------------------------------------------");
                 Console.Write("Houve um erro, verifique se digitou a data corretamente.");
                 Console.ReadKey();
                 Console.WriteLine();
                 Console.Write("Digite novamente (dd/mm/aaaa): ");
             }
             var aluno = new Aluno(nome, cpf, endereco, dataNascimento);
-
+            Console.WriteLine("----------------------------------------------------------------------");
             while (true)
             {
                 Console.WriteLine("Como deseja incluir o aluno na lista de alunos?");
                 Console.WriteLine("1 - [Incluir no inicio da lista]\n2 - [Incluir no final da lista]");
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.Write("Opção: ");
                 if (int.TryParse(Console.ReadLine(), out int opcao))
                 {
                     if (opcao == 1)
@@ -96,6 +99,7 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
     }
     public static void ProcurarCpf()
     {
+        Console.WriteLine("----------------------------------------------------------------------");
         while (true)
         {
             Console.Write("Digite o CPF do aluno: ");
@@ -103,17 +107,21 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
             {
                 if (ListaDeAlunos.ExisteCPF(cpf))
                 {
-
+                    Console.WriteLine("----------------------------------------------------------------------");
                     Console.WriteLine(ListaDeAlunos.RetornarAluno(cpf));
+                    Console.WriteLine("----------------------------------------------------------------------");
                     Console.ReadKey();
                     return;
                 }
             }
             while (true)
             {
-                Console.WriteLine("Houve um problema com o CPF digitado.");
-                Console.WriteLine("Deseja digitar outro número ou voltar ao Menu?");
-                Console.WriteLine("[1] - Digitar outro número [2] - Retornar ao Menu");
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("Houve um problema com o CPF digitado.\n");
+                Console.WriteLine("Deseja digitar outro número ou retornar ao Menu?");
+                Console.WriteLine("[1] - Digitar outro número\n[2] - Retornar ao Menu");
+                Console.WriteLine("-----------------------------------------------");
+                Console.Write("Opção: ");
                 if (int.TryParse(Console.ReadLine(), out int menu))
                 {
                     if (menu == 1)
@@ -133,19 +141,24 @@ public static class MetodosAlunos // Que não dependem de nenhum atributo das li
     {
         while (true)
         {
-            Console.Write("Digite o indice da lista: ");
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.Write("Índice da lista: ");
             if (int.TryParse(Console.ReadLine(), out int indice))
             {
-
+                Console.WriteLine("----------------------------------------------------------------------");
                 ListaDeAlunos.Get(indice);
+                Console.WriteLine("----------------------------------------------------------------------");
                 return;
 
             }
             while (true)
             {
+                Console.WriteLine("----------------------------------------------------------------------");
                 Console.WriteLine("Houve um problema com o Indice fornecido.");
                 Console.WriteLine("Deseja digitar outro número ou voltar ao Menu?");
-                Console.WriteLine("[1] - Digitar outro número [2] - Retornar ao Menu");
+                Console.WriteLine("[1] - Digitar outro número\n[2] - Retornar ao Menu");
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.Write("Opção: ");
                 if (int.TryParse(Console.ReadLine(), out int menu))
                 {
                     if (menu == 1)

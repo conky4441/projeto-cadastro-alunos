@@ -1,5 +1,5 @@
 ﻿using ProjetoFinal.Services;
-using ProjetoFinal.Entities.repositories;
+using ProjetoFinal.Entities.listas;
 
 namespace ProjetoFinal;
 public class Program
@@ -11,11 +11,13 @@ public class Program
 
         do
         {
+            Console.Clear();
             Console.WriteLine("\nSistema Escolar");
+            Console.WriteLine("-------------------------------");
             Console.WriteLine("1. Opções Referentes a Alunos");
             Console.WriteLine("2. Opções Referentes a Turmas");
             Console.WriteLine("3. Sair do Programa");
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("-------------------------------");
             Console.Write("Escolha uma opção: ");
             if (!int.TryParse(Console.ReadLine(), out menu) || menu < 1 || menu > 3)
             {
@@ -27,7 +29,9 @@ public class Program
             {
                 do
                 {
+                    Console.Clear();
                     Console.WriteLine();
+                    Console.WriteLine("----------------------------------------------------------------------");
                     Console.WriteLine("1. Cadastrar Aluno");
                     Console.WriteLine("2. Encontrar aluno por CPF");
                     Console.WriteLine("3. Encontrar aluno em posição da lista [A lista inicia na posição: 0] ");
@@ -36,7 +40,7 @@ public class Program
                     Console.WriteLine("6. Ordernar a lista de alunos por ordem alfabetica");
                     Console.WriteLine("7. Remover o último aluno da lista");
                     Console.WriteLine("8. Voltar ao Menu Anterior");
-                    Console.WriteLine("----------------------------");
+                    Console.WriteLine("----------------------------------------------------------------------");
                     Console.Write("Escolha uma opção: ");
 
                     if (!int.TryParse(Console.ReadLine(), out opcao))
@@ -84,7 +88,9 @@ public class Program
             {
                 do
                 {
+                    Console.Clear();
                     Console.WriteLine();
+                    Console.WriteLine("----------------------------");
                     Console.WriteLine("1. Cadastrar Turma");
                     Console.WriteLine("2. Matricular Aluno em Turma");
                     Console.WriteLine("3. Exibir Turmas");
@@ -121,6 +127,7 @@ public class Program
             }
 
         } while (menu != 3);
+        Thread.Sleep(500);
         Console.WriteLine("------------------------------------------");
         Console.WriteLine("Muito obrigado por utilizar nosso serviço!");
     }

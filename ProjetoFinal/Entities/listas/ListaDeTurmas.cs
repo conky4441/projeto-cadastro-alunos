@@ -2,7 +2,7 @@
 using ProjetoFinal.Entities.models.enums;
 using ProjetoFinal.Entities.Models;
 
-namespace ProjetoFinal.Entities.repositories;
+namespace ProjetoFinal.Entities.listas;
 
 public class ListaDeTurmas
 {
@@ -45,23 +45,24 @@ public class ListaDeTurmas
 
         foreach (var turma in Turmas)
         {
-            Console.Write($"Código: {turma.Codigo}, Etapa: {turma.EtapaEnsino}" +
-                $" Ano: {turma.Ano}, Alunos matriculados: {turma.Alunos.Count}, Quantidade de vagas restantes: {turma.LimiteVagas}\n");
+            Console.Write($"Código da turma: {turma.Codigo} - Etapa: {turma.EtapaEnsino} - " +
+                $" Ano: {turma.Ano} - Alunos matriculados: {turma.Alunos.Count}\nQuantidade de vagas restantes: {turma.LimiteVagas}\n");
 
             var v = Turmas.Select(a => a.Alunos).First();
             if (v.Count == 0)
             {
+                Console.WriteLine("----------------------------------------------------------------------");
                 return;
             }
-
-            Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
+            Console.WriteLine("----------------------------------------------------------------------"); 
             Console.Write("Alunos: ");
             foreach (var a in v)
             {
                 Console.WriteLine(a);
 
             }
-            Console.WriteLine("-------------------------------------");
+            Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
+            Console.WriteLine("----------------------------------------------------------------------");
         }
 
     }

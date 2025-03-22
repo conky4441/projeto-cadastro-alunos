@@ -1,4 +1,4 @@
-﻿using ProjetoFinal.Entities.repositories;
+﻿using ProjetoFinal.Entities.listas;
 using ProjetoFinal.Entities.models.enums;
 using ProjetoFinal.Entities.Models;
 
@@ -11,12 +11,12 @@ public static class MetodosTurmas
         string codigo;
         int ano, etapaEnsino, limiteVagas;
 
-
+        Console.WriteLine("----------------------------------------------------------------------");
         while (true)
         {
+            Console.Write("Digite o código da turma: ");
             while (true)
             {
-                Console.Write("Digite o código da turma: ");
                 codigo = Console.ReadLine() ?? ""; // Evita valor nulo
                 if (!turma.ExisteCodigoTurma(codigo) && codigo != "")
                 {
@@ -24,9 +24,18 @@ public static class MetodosTurmas
                 }
                 else if (turma.ExisteCodigoTurma(codigo))
                 {
+                    Console.WriteLine("----------------------------------------------------------------------");
                     Console.WriteLine("Erro: Código da turma já cadastrado!");
+                    Console.WriteLine("----------------------------------------------------------------------");
+                    Console.Write("Digite novamente: ");
                 }
-                Console.WriteLine("O valor de código não pode ser vazio, digite novamente.");
+                else
+                {
+                    Console.WriteLine("----------------------------------------------------------------------");
+                    Console.WriteLine("O valor de código não pode ser vazio");
+                    Console.WriteLine("----------------------------------------------------------------------");
+                    Console.Write("Digite novamente: ");
+                }
             }
 
             while (true)
@@ -36,21 +45,25 @@ public static class MetodosTurmas
                 {
                     break;
                 }
-
-                Console.WriteLine("Ano inválido. Digite novamente.");
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("Ano inválido.");
+                Console.WriteLine("----------------------------------------------------------------------");
             }
             while (true)
             {
-                Console.WriteLine("Digite a etapa de ensino: ");
-                Console.WriteLine("[1] - Infantil // [2] - Fundamental-Inicial // [3] - Fundamental-Final // [4] - Médio");
-
-                if (int.TryParse(Console.ReadLine(), out etapaEnsino) && etapaEnsino >= 1 && etapaEnsino < 4)
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("Etapa de ensino");
+                Console.WriteLine("[1] - Infantil\n[2] - Fundamental-Inicial\n[3] - Fundamental-Final\n[4] - Médio");
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.Write("Opção: ");
+                if (int.TryParse(Console.ReadLine(), out etapaEnsino) && etapaEnsino >= 1 && etapaEnsino < 5)
                 {
                     break;
                 }
                 Console.WriteLine("Etapa inválida, digite novamente.");
 
             }
+            Console.WriteLine("----------------------------------------------------------------------");
             while (true)
             {
                 Console.Write("Digite o limite de vagas: ");
@@ -59,13 +72,15 @@ public static class MetodosTurmas
                     break;
                 }
                 Console.WriteLine("Limite de vagas inválido.");
+                Console.WriteLine("----------------------------------------------------------------------");
             }
             break;
         }
 
-        Console.WriteLine("--------------------------------------------------------------------------------------");
+        Console.WriteLine("----------------------------------------------------------------------");
         turma.AddTurma(new Turma(codigo, (AnoTurmaEnum)etapaEnsino, ano, limiteVagas));
         Console.WriteLine("Turma cadastrada com sucesso.");
+        Console.ReadKey();
     }
     public static void MatricularAluno(ListaDeTurmas turmaMatricula)
     {
@@ -73,35 +88,29 @@ public static class MetodosTurmas
         string codigo;
         var turma = turmaMatricula;
 
+        Console.WriteLine("----------------------------------------------------------------------");
 
-        while (true)
+        Console.Write("Digite o CPF do aluno: ");
+        while (!int.TryParse(Console.ReadLine(), out cpf) || !ListaDeAlunos.ExisteCPF(cpf))
         {
-            Console.Write("Digite o CPF do aluno: ");
-            if (int.TryParse(Console.ReadLine(), out cpf)) 
+            Console.WriteLine("Houve um problema com o número digitado.\n[1] - Digitar outro\n[2] - Cancelar a Ação");
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.Write("Opção: ");
+            if (int.TryParse(Console.ReadLine(), out int sair))
             {
-                if (ListaDeAlunos.ExisteCPF(cpf))
+                if (sair == 1)
                 {
                     break;
                 }
-            }
-            while (true)
-            {
-                Console.WriteLine("Houve um problema com o número digitado.\nDseja digitar outro? [1] ou Cancelar a Ação? [2]");
-                if (int.TryParse(Console.ReadLine(), out int sair))
+                if (sair == 2)
                 {
-                    if (sair == 1)
-                    {
-                        break;
-                    }
-                    if (sair == 2)
-                    {
-                        return;
-                    }
-
+                    return;
                 }
 
             }
+
         }
+
 
         while (true)
         {
@@ -114,10 +123,21 @@ public static class MetodosTurmas
                 {
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("----------------------------");
+                    Console.WriteLine("A turma já está cheia.");
+                    Console.WriteLine("----------------------------");
+                    Console.ReadKey();
+                    return;
+                }
             }
             while (true)
             {
-                Console.WriteLine("Houve um problema com o número digitado.\nDseja digitar outro? [1] ou Cancelar a Ação? [2]");
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("Houve um problema com o número digitado\n[1] - Digitar novamente\n[2] - Cancelar a Ação");
+                Console.WriteLine("----------------------------------------------------------------------");
+                Console.Write("Opção: ");
                 if (int.TryParse(Console.ReadLine(), out int sair))
                 {
                     if (sair == 1)
@@ -138,16 +158,19 @@ public static class MetodosTurmas
         Console.ReadKey();
 
     }
-    
+
     public static void ExibirTurmas(ListaDeTurmas turmaDeAlunos)
     {
         if (turmaDeAlunos.Turmas.Count == 0)
         {
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.WriteLine("Não há nenhuma turma cadastrada.");
+            Console.WriteLine("----------------------------------------------------------------------");
             Console.ReadKey();
             return;
         }
-        Console.WriteLine("\nLista de Turmas:");
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("Lista de Turmas:");
         turmaDeAlunos.ExibirTurmas();
         Console.ReadKey();
     }
