@@ -99,7 +99,7 @@ public static class MetodosAlunos
     }
     public static void ProcurarCpf()
     {
-        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine("-----------------------------------------------");
         while (true)
         {
             Console.Write("Digite o CPF do aluno: ");
@@ -107,9 +107,9 @@ public static class MetodosAlunos
             {
                 if (ListaDeAlunos.ExisteCPF(cpf))
                 {
-                    Console.WriteLine("----------------------------------------------------------------------");
+                    Console.WriteLine("-----------------------------------------------");
                     Console.WriteLine(ListaDeAlunos.RetornarAluno(cpf));
-                    Console.WriteLine("----------------------------------------------------------------------");
+                    Console.WriteLine("-----------------------------------------------");
                     Console.ReadKey();
                     return;
                 }

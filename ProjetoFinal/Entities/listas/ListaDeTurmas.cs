@@ -1,5 +1,4 @@
-﻿
-using ProjetoFinal.Entities.models.enums;
+﻿using ProjetoFinal.Entities.models.enums;
 using ProjetoFinal.Entities.Models;
 
 namespace ProjetoFinal.Entities.listas;
@@ -45,27 +44,23 @@ public class ListaDeTurmas
 
         foreach (var turma in Turmas)
         {
-            Console.Write($"Código da turma: {turma.Codigo} - Etapa: {turma.EtapaEnsino} - " +
-                $" Ano: {turma.Ano} - Alunos matriculados: {turma.Alunos.Count}\nQuantidade de vagas restantes: {turma.LimiteVagas}\n");
-
-            var v = Turmas.Select(a => a.Alunos).First();
-            if (v.Count == 0)
-            {
-                Console.WriteLine("----------------------------------------------------------------------");
-                return;
-            }
-            Console.WriteLine("----------------------------------------------------------------------"); 
-            Console.Write("Alunos: ");
-            foreach (var a in v)
-            {
-                Console.WriteLine(a);
-
-            }
-            Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
             Console.WriteLine("----------------------------------------------------------------------");
-        }
+            Console.Write($"Turma de código: {turma.Codigo} - Etapa: {turma.EtapaEnsino} - " +
+                $"Ano: {turma.Ano} - Alunos matriculados: {turma.Alunos.Count}\nQuantidade de vagas restantes: {turma.LimiteVagas}\n");
 
+            if (turma.Alunos.Count == 0)
+            {
+                continue;
+            }
+
+            var alunos = string.Join(", ", turma.Alunos.Select(a => a.Nome));
+            Console.WriteLine($"Alunos: {alunos}");
+            Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
+        }
+         
     }
+
+
     public int AlunosForaIdade()
     {
         int totalForaFaixa = 0;

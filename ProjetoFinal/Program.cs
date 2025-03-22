@@ -90,12 +90,12 @@ public class Program
                 {
                     Console.Clear();
                     Console.WriteLine();
-                    Console.WriteLine("----------------------------");
+                    Console.WriteLine("-----------------------------------------");
                     Console.WriteLine("1. Cadastrar Turma");
                     Console.WriteLine("2. Matricular Aluno em Turma");
                     Console.WriteLine("3. Exibir Turmas");
                     Console.WriteLine("4. Voltar ao Menu Anterior");
-                    Console.WriteLine("----------------------------");
+                    Console.WriteLine("-----------------------------------------");
                     Console.Write("Escolha uma opção: ");
 
                     if (!int.TryParse(Console.ReadLine(), out opcao))
