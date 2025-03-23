@@ -21,6 +21,7 @@ public class Program
             Console.Write("Escolha uma opção: ");
             if (!int.TryParse(Console.ReadLine(), out menu) || menu < 1 || menu > 3)
             {
+                Console.WriteLine("-------------------------------");
                 Console.WriteLine("Opção inválida.");
                 Console.ReadKey();
                 continue;
@@ -45,6 +46,7 @@ public class Program
 
                     if (!int.TryParse(Console.ReadLine(), out opcao))
                     {
+                        Console.WriteLine("----------------------------------------------------------------------");
                         Console.WriteLine("Opção inválida.");
                         Console.ReadKey();
                         continue;
@@ -78,6 +80,7 @@ public class Program
                         case 8:
                             break;
                         default:
+                            Console.WriteLine("----------------------------------------------------------------------");
                             Console.WriteLine("Opção inválida.");
                             Console.ReadKey();
                             break;
@@ -94,12 +97,14 @@ public class Program
                     Console.WriteLine("1. Cadastrar Turma");
                     Console.WriteLine("2. Matricular Aluno em Turma");
                     Console.WriteLine("3. Exibir Turmas");
-                    Console.WriteLine("4. Voltar ao Menu Anterior");
+                    Console.WriteLine("4. Alunos fora da idade esperada");
+                    Console.WriteLine("5. Voltar ao Menu Anterior");
                     Console.WriteLine("-----------------------------------------");
                     Console.Write("Escolha uma opção: ");
 
                     if (!int.TryParse(Console.ReadLine(), out opcao))
                     {
+                        Console.WriteLine("-----------------------------------------");
                         Console.WriteLine("Opção inválida.");
                         Console.ReadKey();
                         continue;
@@ -117,19 +122,23 @@ public class Program
                             MetodosTurmas.ExibirTurmas(turmas);
                             break;
                         case 4:
+                            MetodosTurmas.AlunosForaIdade(turmas);
+                            break;
+                        case 5:
                             break;
                         default:
+                            Console.WriteLine("-----------------------------------------");
                             Console.WriteLine("Opção inválida.");
                             Console.ReadKey();
                             break;
                     }
-                } while (opcao != 4);
+                } while (opcao != 5);
             }
 
         } while (menu != 3);
-        Thread.Sleep(500);
-        Console.WriteLine("------------------------------------------");
-        Console.WriteLine("Muito obrigado por utilizar nosso serviço!");
+        Thread.Sleep(350);
+        Console.WriteLine("-------------------------------");
+        Console.WriteLine("Muito obrigado por utilizar nossos serviços!");
     }
 }
 

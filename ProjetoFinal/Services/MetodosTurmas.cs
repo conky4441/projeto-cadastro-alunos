@@ -158,7 +158,6 @@ public static class MetodosTurmas
         Console.ReadKey();
 
     }
-
     public static void ExibirTurmas(ListaDeTurmas turmaDeAlunos)
     {
         if (turmaDeAlunos.Turmas.Count == 0)
@@ -174,6 +173,22 @@ public static class MetodosTurmas
         turmaDeAlunos.ExibirTurmas();
         Console.ReadKey();
     }
-
+    public static void AlunosForaIdade(ListaDeTurmas turma)
+    {
+        int idade;
+        Console.WriteLine("-----------------------------------------");
+        Console.WriteLine("Etapa de ensino: ");
+        Console.WriteLine("[1] - Infantil \n[2] - Fundamental Inicial \n[3] - Fundamental Final \n[4] - Médio");
+        Console.WriteLine("-----------------------------------------");
+        Console.Write("Opção: ");
+        while (!int.TryParse(Console.ReadLine() ?? "5", out idade) || idade <= 0 || idade > 4)
+        {
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine("Opção inválida");
+            Console.Write("Digite novamente: ");
+        }
+        var etapaEnsino = (AnoTurmaEnum)idade;
+        turma.AlunosForaIdade(etapaEnsino);
+    }
 
 }

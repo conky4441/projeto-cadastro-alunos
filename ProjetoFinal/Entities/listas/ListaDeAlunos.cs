@@ -102,7 +102,6 @@ public static class ListaDeAlunos //É uma lista encadeada
         Console.WriteLine("----------------------------------------------------------------------");
         Console.ReadKey();
     }
-
     public static void OrdernarAlunos()
     {
         if (Inicio == null || Inicio.Proximo == null) return;
@@ -148,7 +147,6 @@ public static class ListaDeAlunos //É uma lista encadeada
             }
         } while (trocou);
     }
-
     public static void ExibirAlunos()
     {
 
@@ -193,7 +191,6 @@ public static class ListaDeAlunos //É uma lista encadeada
         return;
 
     }
-
     public static Aluno? RetornarAluno(int cpf)
     {
         var aluno = Inicio;
@@ -227,29 +224,6 @@ public static class ListaDeAlunos //É uma lista encadeada
 
 
     }
-    public static bool ExisteNome(string nome)
-    {
-        if (Inicio == null)
-        {
-            return false;
-        }
-        if (Inicio.Nome == nome)
-        {
-            return true;
-        }
-
-        Aluno alunoAtual = Inicio;
-        while (alunoAtual.Proximo != null)
-        {
-            if (alunoAtual.Nome == nome)
-            {
-                return true;
-            }
-            alunoAtual = alunoAtual.Proximo;
-        }
-        return false;
-    }
-
 }
 
 

@@ -6,8 +6,6 @@ namespace ProjetoFinal.Entities.listas;
 public class ListaDeTurmas
 {
     public List<Turma> Turmas { get; set; } = new List<Turma>();
-
-
     public ListaDeTurmas()
     {
 
@@ -41,7 +39,6 @@ public class ListaDeTurmas
     }
     public void ExibirTurmas()
     {
-
         foreach (var turma in Turmas)
         {
             Console.WriteLine("----------------------------------------------------------------------");
@@ -54,32 +51,39 @@ public class ListaDeTurmas
             }
 
             var alunos = string.Join(", ", turma.Alunos.Select(a => a.Nome));
-            Console.WriteLine($"Alunos: {alunos}");
-            Console.WriteLine($"Alunos fora da idade esperada: {AlunosForaIdade()}");
-        }
-         
+            Console.WriteLine($"Alunos: {alunos}");           
+        }       
     }
-
-
-    public int AlunosForaIdade()
+    public void AlunosForaIdade(AnoTurmaEnum etapaEnsino)
     {
         int totalForaFaixa = 0;
 
         foreach (var turma in Turmas)
         {
-            foreach (var aluno in turma.Alunos)
+            if (turma.EtapaEnsino == etapaEnsino)
             {
-                if (!IdadeEstaDentroDaFaixa(aluno.Idade, turma.EtapaEnsino))
+                foreach (var aluno in turma.Alunos)
                 {
-                    totalForaFaixa++;
+                    if (!IdadeEstaDentroDaFaixa(aluno.Idade, etapaEnsino))
+                    {
+                        totalForaFaixa++;
+                    }
                 }
             }
         }
 
-        return totalForaFaixa;
+        if(totalForaFaixa == 0)
+        {
+            Console.WriteLine("--------------------------------------------------------------------------");
+            Console.WriteLine("Não há nenhum aluno nessa etapa de ensino que está fora da idade adequada.");
+            Console.ReadKey();
+            return;
+        }
+        Console.WriteLine("----------------------------------------------------------------------");
+        Console.WriteLine($"Número de alunos fora da idade adequada para essa etapa de ensino: {totalForaFaixa}");
+        Console.ReadKey();
+
     }
-
-
     private bool IdadeEstaDentroDaFaixa(int idade, AnoTurmaEnum etapa)
     {
         return etapa switch

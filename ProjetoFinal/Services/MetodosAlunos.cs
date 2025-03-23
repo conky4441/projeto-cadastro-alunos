@@ -36,7 +36,9 @@ public static class MetodosAlunos
 
                 else if (ListaDeAlunos.ExisteCPF(cpf))
                 {
+                    Console.WriteLine("----------------------------------------------------------------------");
                     Console.WriteLine("Erro: CPF já cadastrado! Digite novamente: ");
+                    Console.WriteLine("----------------------------------------------------------------------");
                 }
 
             }
@@ -136,7 +138,6 @@ public static class MetodosAlunos
             }
         }
     }
-
     public static void IndiceLista()
     {
         while (true)
