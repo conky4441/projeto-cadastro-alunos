@@ -44,5 +44,11 @@ public class Aluno() : IComparable<Aluno>
         }
         return 0;
     }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is Aluno aluno && Cpf == aluno.Cpf;
+
+    }
 }
 

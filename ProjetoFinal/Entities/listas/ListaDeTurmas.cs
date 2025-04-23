@@ -10,8 +10,8 @@ public class ListaDeTurmas
     {
 
     }
-    //Métodos das Turmas
 
+    //Métodos das Turmas
     public void AddTurma(Turma turma)
     {
         Turmas.Add(turma);
@@ -42,8 +42,7 @@ public class ListaDeTurmas
         foreach (var turma in Turmas)
         {
             Console.WriteLine("----------------------------------------------------------------------");
-            Console.Write($"Turma de código: {turma.Codigo} - Etapa: {turma.EtapaEnsino} - " +
-                $"Ano: {turma.Ano} - Alunos matriculados: {turma.Alunos.Count}\nQuantidade de vagas restantes: {turma.LimiteVagas}\n");
+            Console.Write($"{turma} - Alunos matriculados: {turma.Alunos.Count}\nQuantidade de vagas restantes: {turma.LimiteVagas}\n");
 
             if (turma.Alunos.Count == 0)
             {

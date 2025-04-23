@@ -1,4 +1,5 @@
-﻿using ProjetoFinal.Entities.listas;
+﻿using ProjetoFinal.Entities.exceptions;
+using ProjetoFinal.Entities.listas;
 using ProjetoFinal.Entities.models;
 
 
@@ -28,6 +29,7 @@ public static class MetodosAlunos
             {
                 Console.Write("Digite o CPF do aluno: ");
                 // Evita valor nulo
+               
                 bool resp = int.TryParse(Console.ReadLine(), out cpf);
                 if (!ListaDeAlunos.ExisteCPF(cpf) && cpf != 0 && resp)
                 {
@@ -36,9 +38,7 @@ public static class MetodosAlunos
 
                 else if (ListaDeAlunos.ExisteCPF(cpf))
                 {
-                    Console.WriteLine("----------------------------------------------------------------------");
-                    Console.WriteLine("Erro: CPF já cadastrado! Digite novamente: ");
-                    Console.WriteLine("----------------------------------------------------------------------");
+                    throw new ExcecaoDeAlunoJaExistente("O cpf desse aluno já existe.");
                 }
 
             }

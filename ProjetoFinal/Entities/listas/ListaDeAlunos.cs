@@ -211,10 +211,21 @@ public static class ListaDeAlunos //É uma lista encadeada
     public static bool ExisteCPF(int cpf)
     {
 
+        if (Inicio is null)
+        {
+            return false;
+        }
+
         Aluno alunoAtual = Inicio;
+
+        if (alunoAtual.Cpf == cpf)
+        {
+            return true;
+        }
+
         while (alunoAtual != null)
         {
-            if (alunoAtual.Cpf == cpf)
+            if (alunoAtual.Equals(alunoAtual.Proximo))
             {
                 return true;
             }

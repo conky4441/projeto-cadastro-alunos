@@ -1,5 +1,6 @@
 ﻿using ProjetoFinal.Services;
 using ProjetoFinal.Entities.listas;
+using ProjetoFinal.Entities.exceptions;
 
 namespace ProjetoFinal;
 public class Program
@@ -55,7 +56,15 @@ public class Program
                     switch (opcao)
                     {
                         case 1:
-                            MetodosAlunos.CadastrarAluno();
+                            try
+                            {
+                                MetodosAlunos.CadastrarAluno();
+                            }
+                            catch (ExcecaoDeAlunoJaExistente e)
+                            {
+                                Console.WriteLine(e.Message);
+                                Console.ReadKey();
+                            }
                             break;
                         case 2:
                             MetodosAlunos.ProcurarCpf();
